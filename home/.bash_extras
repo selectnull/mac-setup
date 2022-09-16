@@ -1,0 +1,33 @@
+# make cd .. work like cd ../.., cd ... = cd ../../..
+cd () {
+  local -ri n=${#*};
+  if [ $n -eq 0 -o -d "${!n}" -o "${!n}" == "-" ]; then
+    builtin cd "$@";
+  else
+    local e="s:\.\.\.:../..:g";
+    builtin cd "${@:1:$n-1}" $(sed -e$e -e$e -e$e <<< "${!n}");
+  fi
+}
+
+# add newline after curl
+curle () {
+    curl "$@"; echo
+}
+
+findp () {
+    if command -v ack > /dev/null 2>&1; then
+        ack -f | ack -i "$@"
+    else
+        find . -type f -name "*$@*"
+    fi
+}
+
+# edit modified files
+via() {
+    $EDITOR $(git ls-files --modified --others --exclude-standard) $@
+}
+
+# make dir and change to it
+mkcd () {
+    mkdir -p "$1" && cd "$1"
+}
