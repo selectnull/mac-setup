@@ -83,7 +83,7 @@ end
 -- treesitter config
 packer.use {'nvim-treesitter/nvim-treesitter', run=':TSUpdate'}
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "python", "lua", "javascript" },
+  ensure_installed = { "python", "lua", "javascript", "typescript" },
 
   -- Install languages synchronously (only applied to `ensure_installed`)
   sync_install = false,
