@@ -45,4 +45,7 @@ return {
     saturation = 0.4,
     brightness = 0.3,
   },
+
+  -- number of scrollback lines to keep
+  scrollback_lines = 10000,
 }
