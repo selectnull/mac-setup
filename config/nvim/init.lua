@@ -17,4 +17,6 @@ require 'selectnull.statusline'
 require 'selectnull.emacs-insert-mode'
 require 'selectnull.gitsigns'
 
+require 'selectnull.surround'
+
 require 'selectnull.colorscheme'.try_color_schemes({'Spacegray', 'papercolor', 'delek'})
