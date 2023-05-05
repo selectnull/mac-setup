@@ -19,4 +19,4 @@ require 'selectnull.gitsigns'
 
 require 'selectnull.surround'
 
-require 'selectnull.colorscheme'.try_color_schemes({'Spacegray', 'papercolor', 'delek'})
+require 'selectnull.colorscheme'.try_color_schemes({'codedark', 'papercolor', 'delek'})

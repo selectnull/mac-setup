@@ -2,10 +2,11 @@ M = {}
 
 local use = packer.use
 use {'NLKNguyen/papercolor-theme', opt=true}
-use {'kyoz/purify', rtp='vim', opt=true}
 use {'ldelossa/vimdark', opt=true}
 use {'Aryansh-S/fastdark.vim', opt=true}
-use {'ackyshake/Spacegray.vim', opt=true}
+use {"cocopon/iceberg.vim"}
+use {'tomasiser/vim-code-dark'}
+use {'drewtempelmeyer/palenight.vim'}
 
 --- Try a color scheme and return true if it exist.
 function M.try_color_scheme(colorscheme)
