@@ -17,11 +17,21 @@ local keys = {
 
   -- clipboard
   {key="c", mods="SUPER", action=wezterm.action{CopyTo="ClipboardAndPrimarySelection"}},
-  {key="v", mods="SUPER", action="PastePrimarySelection"},
+  {key="v", mods="SUPER", action=wezterm.action.PasteFrom "PrimarySelection"},
 
   {key="l", mods="CMD|CTRL", action=wezterm.action{ClearScrollback="ScrollbackAndViewport"}},
   {key="w", mods="CMD|SHIFT", action=wezterm.action{CloseCurrentPane={confirm=true}}},
 }
+
+-- move tab
+for i = 1, 8 do
+  -- CMD+CTRL+number to move current tab to <number> position
+  table.insert(keys, {
+    key = tostring(i),
+    mods = 'CMD|CTRL',
+    action = wezterm.action.MoveTab(i - 1),
+  })
+end
 
 return {
   font = wezterm.font("Roboto Mono"),
