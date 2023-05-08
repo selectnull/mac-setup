@@ -20,6 +20,7 @@ autocmd('BufNewFile,BufNew,BufRead *.tsx setlocal softtabstop=2 shiftwidth=2')
 -- html
 autocmd('BufNewFile,BufNew,BufRead *.html setlocal softtabstop=2 shiftwidth=2')
 autocmd('BufNewFile,BufNew,BufRead *.css setlocal softtabstop=2 shiftwidth=2')
+autocmd('BufNewFile,BufNew,BufRead *.scss setlocal softtabstop=2 shiftwidth=2')
 
 -- lua
 autocmd('BufNewFile,BufNew,BufRead *.lua setlocal softtabstop=2 shiftwidth=2')
