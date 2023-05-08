@@ -57,6 +57,9 @@ export LC_ALL="en_US.UTF-8"
 # add ~/bin to path if it exist
 [ -d ~/bin ] && PATH="$HOME/bin:$PATH"
 
+# add ~/.local/bin (used by pipx)
+[ -d ~/.local/bin ] && PATH="$HOME/.local/bin:$PATH"
+
 # setup bash completion
 [ -d /opt/homebrew/bin ] && {
     eval "$(/opt/homebrew/bin/brew shellenv)"
