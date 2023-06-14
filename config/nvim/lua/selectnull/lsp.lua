@@ -83,7 +83,7 @@ end
 -- treesitter config
 packer.use {'nvim-treesitter/nvim-treesitter', run=':TSUpdate'}
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "python", "lua", "javascript", "typescript" },
+  ensure_installed = { "python", "lua", "javascript", "typescript", "rust" },
 
   -- Install languages synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -96,7 +96,7 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
 
     -- list of language that will be disabled
-    disable = { "c", "rust" },
+    disable = {},
 
     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
     -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
@@ -148,3 +148,19 @@ cmp.setup {
     end, { "i", "s" }),
   }
 }
+
+lspconfig.rust_analyzer.setup {
+  capabilities = capabilities,
+  on_attach = on_attach
+}
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'sh',
+  callback = function()
+    vim.lsp.start({
+      name = 'bash-language-server',
+      cmd = { 'bash-language-server', 'start' },
+      on_attach = on_attach
+    })
+  end,
+})
