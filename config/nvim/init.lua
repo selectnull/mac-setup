@@ -19,4 +19,6 @@ require 'selectnull.gitsigns'
 
 require 'selectnull.surround'
 
+require 'selectnull.chatgpt'
+
 require 'selectnull.colorscheme'.try_color_schemes({'codedark', 'papercolor', 'delek'})
