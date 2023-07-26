@@ -21,6 +21,12 @@ local keys = {
 
   {key="l", mods="CMD|CTRL", action=wezterm.action{ClearScrollback="ScrollbackAndViewport"}},
   {key="w", mods="CMD|SHIFT", action=wezterm.action{CloseCurrentPane={confirm=true}}},
+
+  -- command palette
+  {key='p', mods='SUPER|SHIFT', action=wezterm.action.ActivateCommandPalette},
+
+  -- Unicode character selector
+  {key='u', mods='SUPER|SHIFT', action=wezterm.action.CharSelect},
 }
 
 -- move tab
