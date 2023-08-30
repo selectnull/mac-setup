@@ -10,4 +10,4 @@ alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/co
 
 # databases
 alias psql='psql --user postgres --host localhost'
-alias mysql='mysql --host 127.0.0.1'
+alias mysql='mysql --user root --host 127.0.0.1 -p1'
