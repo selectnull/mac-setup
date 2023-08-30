@@ -43,6 +43,9 @@ return {
   font = wezterm.font("Roboto Mono"),
   font_size = 15.0,
 
+  initial_rows=40,
+  initial_cols=120,
+
   use_fancy_tab_bar = false,
   tab_bar_at_bottom = true,
   use_resize_increments = false,
