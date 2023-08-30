@@ -1,4 +1,4 @@
-alias ls='gls -lhv --group-directories-first --color=auto'
+alias ls='exa --long --group-directories-first'
 alias ll='ls -a'
 
 alias jsontool='python -m json.tool'
