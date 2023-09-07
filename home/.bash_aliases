@@ -1,4 +1,4 @@
-alias ls='exa --long --group-directories-first'
+alias ls='eza --long --group-directories-first'
 alias ll='ls -a'
 
 alias jsontool='python -m json.tool'
