@@ -27,6 +27,10 @@ via() {
     $EDITOR $(git ls-files --modified --others --exclude-standard) $@
 }
 
+vig() {
+    $EDITOR $(ag $1 --files-with-matches)
+}
+
 # make dir and change to it
 mkcd () {
     mkdir -p "$1" && cd "$1"
