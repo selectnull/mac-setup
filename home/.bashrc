@@ -70,7 +70,10 @@ export LC_ALL="en_US.UTF-8"
 [ -f /opt/homebrew/etc/bash_completion.d ] && . /opt/homebrew/etc/bash_completion.d
 
 # setup pyenv
-eval "$(pyenv init --path)"
+# eval "$(pyenv init --path)"
+
+# setup rye
+. "$HOME/.rye/env"
 
 # setup rust
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
