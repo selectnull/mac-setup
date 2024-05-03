@@ -84,7 +84,7 @@ export LC_ALL="en_US.UTF-8"
 
 # setup ave
 [ -f ~/bin/ave.sh ] && {
-    export WORKON_HOME=~/.venvs
+    export AVE_HOME=~/.venvs
     . ~/bin/ave.sh
 }
 
