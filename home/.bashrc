@@ -78,6 +78,10 @@ export LC_ALL="en_US.UTF-8"
 # setup rust
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
+# setup bun
+# export BUN_INSTALL="$HOME/.bun"
+# export PATH=$BUN_INSTALL/bin:$PATH
+
 # setup ave
 [ -f ~/bin/ave.sh ] && {
     export WORKON_HOME=~/.venvs
