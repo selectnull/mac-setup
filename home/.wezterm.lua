@@ -7,7 +7,9 @@ local keys = {
 
   -- activate pane
   {key="j", mods="SUPER|ALT", action=wezterm.action{ActivatePaneDirection="Next"}},
+  {key=".", mods="SUPER", action=wezterm.action{ActivatePaneDirection="Next"}},
   {key="k", mods="SUPER|ALT", action=wezterm.action{ActivatePaneDirection="Prev"}},
+  {key=",", mods="SUPER", action=wezterm.action{ActivatePaneDirection="Prev"}},
 
   -- resize pane
   {key="LeftArrow", mods="SUPER|ALT", action=wezterm.action{AdjustPaneSize={"Left", 1}}},
@@ -27,6 +29,9 @@ local keys = {
 
   -- Unicode character selector
   {key='u', mods='SUPER|SHIFT', action=wezterm.action.CharSelect},
+
+  -- Toggle Pane Zoom
+  {key='Enter', mods='CMD', action=wezterm.action.TogglePaneZoomState}
 }
 
 -- move tab
