@@ -89,13 +89,8 @@ export LC_ALL="en_US.UTF-8"
 }
 
 ## Setup google cloud SDK
-# Update PATH for the Google Cloud SDK.
 if [ -f '/Users/sasha/bin/google-cloud-sdk/path.bash.inc' ]; then
     . '/Users/sasha/bin/google-cloud-sdk/path.bash.inc'
-fi
-# Enable shell command completion for gcloud.
-if [ -f '/Users/sasha/bin/google-cloud-sdk/completion.bash.inc' ]; then
-    . '/Users/sasha/bin/google-cloud-sdk/completion.bash.inc'
 fi
 
 EDITOR=$(which nvim)
