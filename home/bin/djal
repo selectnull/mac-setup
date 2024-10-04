@@ -3,11 +3,18 @@
 # Django admin local
 
 params=( --settings=project.localsettings --pythonpath=. )
+args=("$@")
+
+if [ $# -eq 0 ]; then
+    args=shell
+fi
 
 if command -v django-admin.py > /dev/null; then
-    django-admin.py "$@" "${params[@]}"
+    cmd=django-admin.py
 else
     if command -v django-admin > /dev/null; then
-        django-admin "$@" "${params[@]}"
+        cmd=django-admin
     fi
 fi
+
+$cmd "${args[@]}" "${params[@]}"
