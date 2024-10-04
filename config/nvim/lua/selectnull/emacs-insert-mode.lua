@@ -1,6 +1,7 @@
-local Keymap = require 'selectnull.utils'.Keymap
+local Keymap = require("selectnull.utils").Keymap
 
 -- Enable Emacs style movement in insert mode
+-- Some men just want to watch the world burn.
 
 Keymap.insert("<C-n>", "<Down>")
 Keymap.insert("<C-p>", "<Up>")

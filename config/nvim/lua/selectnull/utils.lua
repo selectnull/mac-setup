@@ -1,7 +1,7 @@
 Module = {}
 
 Module.Keymap = {}
-Module.Keymap.default_opts = {noremap = true, silent = true}
+Module.Keymap.default_opts = { noremap = true, silent = true }
 
 Module.Keymap.set = function(mode, lhs, rhs, opts)
   if not opts then

@@ -1,26 +1,21 @@
 -- set options based on filetype
 
-local autocmd = function(cmd) 
-  vim.api.nvim_exec('autocmd '..cmd, false)
+local autocmd = function(opts)
+  vim.api.nvim_create_autocmd("FileType", opts)
 end
 
--- markdown
-autocmd('BufNewFile,BufReadPost *.md set filetype=markdown')
-autocmd('BufNewFile,BufNew,BufRead *.md setlocal textwidth=72')
+autocmd {
+  pattern = "python",
+  callback = function()
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.softtabstop = 4
+  end,
+}
 
--- python
-autocmd('BufNewFile,BufNew,BufRead *.py setlocal softtabstop=4 shiftwidth=4')
-
--- javascript and friends
-autocmd('BufNewFile,BufNew,BufRead *.js setlocal softtabstop=2 shiftwidth=2')
-autocmd('BufNewFile,BufNew,BufRead *.mjs setlocal softtabstop=2 shiftwidth=2')
-autocmd('BufNewFile,BufNew,BufRead *.ts setlocal softtabstop=2 shiftwidth=2')
-autocmd('BufNewFile,BufNew,BufRead *.tsx setlocal softtabstop=2 shiftwidth=2')
-
--- html
-autocmd('BufNewFile,BufNew,BufRead *.html setlocal softtabstop=2 shiftwidth=2')
-autocmd('BufNewFile,BufNew,BufRead *.css setlocal softtabstop=2 shiftwidth=2')
-autocmd('BufNewFile,BufNew,BufRead *.scss setlocal softtabstop=2 shiftwidth=2')
-
--- lua
-autocmd('BufNewFile,BufNew,BufRead *.lua setlocal softtabstop=2 shiftwidth=2')
+autocmd {
+  pattern = { "javascript", "html", "htmldjango", "lua" },
+  callback = function()
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.softtabstop = 2
+  end,
+}

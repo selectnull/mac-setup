@@ -1,22 +1,30 @@
-packer = require 'packer'
-packer.init()
-packer.use('wbthomason/packer.nvim')
+-- Set <space> as the leader key
+-- See `:help mapleader`
+--  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
-require 'selectnull.options'
-require 'selectnull.keymaps'
-require 'selectnull.supertab'
-packer.use 'tomtom/tcomment_vim'
-require 'selectnull.fuzzy'
+require "selectnull.vimopts"
+require "selectnull.keymaps"
+require "selectnull.emacs-insert-mode"
+require "selectnull.make-css"
+require "selectnull.filetypes"
 
-require 'selectnull.lsp'
-require 'selectnull.filetypes'
+Foo = require "selectnull.foo"
 
-require 'selectnull.telescope'
-require 'selectnull.statusline'
+-- Set to true if you have a Nerd Font installed
+vim.g.have_nerd_font = false
 
-require 'selectnull.emacs-insert-mode'
-require 'selectnull.gitsigns'
+-- [[ Install `lazy.nvim` plugin manager ]]
+--    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  vim.fn.system { "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath }
+end ---@diagnostic disable-next-line: undefined-field
+vim.opt.rtp:prepend(lazypath)
 
-require 'selectnull.surround'
+require("lazy").setup "plugins"
 
-require 'selectnull.colorscheme'.try_color_schemes({'codedark', 'papercolor', 'delek'})
+-- The line beneath this is called `modeline`. See `:help modeline`
+-- vim: ts=2 sts=2 sw=2 et
