@@ -93,4 +93,4 @@ if [ -f '/Users/sasha/bin/google-cloud-sdk/path.bash.inc' ]; then
     . '/Users/sasha/bin/google-cloud-sdk/path.bash.inc'
 fi
 
-EDITOR=$(which nvim)
+export EDITOR=$(which nvim)
