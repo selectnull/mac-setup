@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+# Edit files from a specific commit (defaults to HEAD)
+# or localy modified files
+
+diff_tree() {
+    local commit="${1:-HEAD}"
+    git diff-tree --no-commit-id --name-only -r "$commit"
+}
+
+modified_files() {
+    git ls-files --modified --others --exclude-standard
+}
+
+if [ $# -eq 0 ]; then
+    if [ -z "$(git status --porcelain)" ]; then
+        # Working directory clean, open files from the last commit
+        $EDITOR $(diff_tree)
+    else
+        # There are modified files, open those
+        $EDITOR $(modified_files)
+    fi
+else
+    # Open files from the specific commit
+    $EDITOR $(diff_tree $1)
+fi

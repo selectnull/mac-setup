@@ -1,3 +1,5 @@
+# vim: set ft=bash:
+
 # make cd .. work like cd ../.., cd ... = cd ../../..
 cd () {
   local -ri n=${#*};
@@ -20,11 +22,6 @@ findp () {
     else
         find . -type f -name "*$@*"
     fi
-}
-
-# edit modified files
-via() {
-    $EDITOR $(git ls-files --modified --others --exclude-standard) $@
 }
 
 vig() {
