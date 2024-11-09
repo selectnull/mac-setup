@@ -3,13 +3,17 @@
 # Edit files from a specific commit (defaults to HEAD)
 # or localy modified files
 
+relative_paths() {
+    sed "s|^$(realpath --relative-to=. $(git rev-parse --show-toplevel))/||"
+}
+
 diff_tree() {
     local commit="${1:-HEAD}"
     git diff-tree --no-commit-id --name-only -r "$commit"
 }
 
 modified_files() {
-    git ls-files --modified --others --exclude-standard
+    git ls-files --modified --others --exclude-standard | relative_paths
 }
 
 if [ $# -eq 0 ]; then
