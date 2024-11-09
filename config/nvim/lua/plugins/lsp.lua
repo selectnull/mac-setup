@@ -5,14 +5,6 @@ return {
     -- Automatically install LSPs and related tools to stdpath for neovim
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
-
-    -- Useful status updates for LSP.
-    -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-    -- { "j-hui/fidget.nvim", opts = {} },
-
-    -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
-    -- used for completion, annotations and signatures of Neovim apis
-    { "folke/neodev.nvim", opts = {} },
   },
   config = function()
     vim.diagnostic.config {
