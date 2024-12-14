@@ -6,8 +6,8 @@ local keys = {
   { key = "d", mods = "SUPER|SHIFT", action = wezterm.action { SplitVertical = { domain = "CurrentPaneDomain" } } },
 
   -- activate pane
-  { key = "k", mods = "SUPER", action = wezterm.action { ActivatePaneDirection = "Next" } },
-  { key = "j", mods = "SUPER", action = wezterm.action { ActivatePaneDirection = "Prev" } },
+  { key = ".", mods = "SUPER", action = wezterm.action { ActivatePaneDirection = "Next" } },
+  { key = ",", mods = "SUPER", action = wezterm.action { ActivatePaneDirection = "Prev" } },
 
   -- resize pane
   { key = "LeftArrow", mods = "SUPER|ALT", action = wezterm.action { AdjustPaneSize = { "Left", 1 } } },
