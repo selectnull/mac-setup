@@ -9,6 +9,7 @@ require "selectnull.keymaps"
 require "selectnull.emacs-insert-mode"
 require "selectnull.make-css"
 require "selectnull.filetypes"
+require "selectnull.quickfix"
 
 Foo = require "selectnull.foo"
 
