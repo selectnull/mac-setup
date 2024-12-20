@@ -1,18 +1,13 @@
-local Keymap = require("selectnull.utils").Keymap
-
--- Remap space as leader key
-Keymap.set("", "<Space>", "<Nop>")
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+local opts = { noremap = true, silent = true }
 
 -- Navigate buffers
-Keymap.set("n", "<Tab>", ":bnext<CR>")
-Keymap.set("n", "<S-Tab>", ":bprevious<CR>")
+vim.keymap.set("n", "<Tab>", ":bnext<CR>", opts)
+vim.keymap.set("n", "<S-Tab>", ":bprevious<CR>", opts)
 
 -- Get out of the insert mode
-Keymap.set("i", "jk", "<ESC>")
+vim.keymap.set("i", "jk", "<ESC>", opts)
 
-function EditWithRelativePath()
+local function edit_with_relative_path()
   -- Find the Git root directory
   local current_dir = vim.fn.expand "%:p:h"
   local git_command = "git -C " .. current_dir .. " rev-parse --show-toplevel"
@@ -31,13 +26,12 @@ function EditWithRelativePath()
   vim.fn.feedkeys(vim.api.nvim_replace_termcodes(":edit " .. relative_dir .. "/", true, false, true))
 end
 
--- Set the keybinding
--- vim.api.nvim_set_keymap("n", "<leader>e", "<cmd>lua EditWithRelativePath()<CR>", { noremap = true, silent = true })
-
 -- Shortcut keys
-Keymap.set("n", "<leader>e", ":lua EditWithRelativePath()<CR>")
-Keymap.set("n", "<leader>w", ":write<CR>")
-Keymap.set("n", "<leader>q", ":quitall<CR>")
-Keymap.set("n", "<leader>d", ":bdelete<CR>")
-Keymap.set("n", "<leader>o", "o<ESC>k")
-Keymap.set("n", "<leader>O", "O<ESC>j")
+vim.keymap.set("n", "<leader>e", edit_with_relative_path)
+vim.keymap.set("n", "<leader>w", ":write<CR>")
+vim.keymap.set("n", "<leader>q", ":quitall<CR>")
+vim.keymap.set("n", "<leader>d", ":bdelete<CR>")
+
+-- Insert empty lines below and above the current line
+vim.keymap.set("n", "<leader>o", "o<ESC>k")
+vim.keymap.set("n", "<leader>O", "O<ESC>j")
