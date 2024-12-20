@@ -1,11 +1,10 @@
-local Keymap = require("selectnull.utils").Keymap
-
 -- Enable Emacs style movement in insert mode
 -- Some men just want to watch the world burn.
 
-Keymap.insert("<C-n>", "<Down>")
-Keymap.insert("<C-p>", "<Up>")
-Keymap.insert("<C-b>", "<Left>")
-Keymap.insert("<C-f>", "<Right>")
-Keymap.insert("<C-a>", "<C-o>^")
-Keymap.insert("<C-e>", "<C-o>$")
+local o = { noremap = true, silent = true }
+-- vim.keymap.set("i", "<C-n>", "<Down>", o)
+-- vim.keymap.set("i", "<C-p>", "<Up>", o)
+vim.keymap.set("i", "<C-b>", "<Left>", o)
+vim.keymap.set("i", "<C-f>", "<Right>", o)
+vim.keymap.set("i", "<C-a>", "<C-o>^", o)
+vim.keymap.set("i", "<C-e>", "<C-o>$", o)
