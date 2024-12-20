@@ -11,8 +11,6 @@ require "selectnull.make-css"
 require "selectnull.filetypes"
 require "selectnull.quickfix"
 
-Foo = require "selectnull.foo"
-
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
