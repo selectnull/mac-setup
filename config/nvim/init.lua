@@ -13,9 +13,6 @@ require "selectnull.quickfix"
 
 Foo = require "selectnull.foo"
 
--- Set to true if you have a Nerd Font installed
-vim.g.have_nerd_font = true
-
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
