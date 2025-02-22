@@ -9,12 +9,13 @@ require "selectnull.emacs-insert-mode"
 require "selectnull.make-css"
 require "selectnull.filetypes"
 require "selectnull.quickfix"
+require("selectnull.lsp_hover").setup()
 
 -- load plugins via lazy.nvim
 require "config.lazy"
 
 -- see `:help colorscheme`
-vim.cmd.colorscheme "default"
+vim.cmd.colorscheme "defaulted"
 
 -- see `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
