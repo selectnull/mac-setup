@@ -3,7 +3,7 @@ local options = {
   scrolloff = 4,
   signcolumn = "yes",
 
-  termguicolors = false,
+  termguicolors = true,
   background = "dark",
 
   expandtab = true,
