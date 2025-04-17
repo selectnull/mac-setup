@@ -16,8 +16,9 @@ local options = {
   smartcase = true,
 
   shortmess = "filnxtToOFI",
+  winborder = "rounded",
 }
 
 for k, v in pairs(options) do
-  vim.opt[k] = v
+  vim.o[k] = v
 end
