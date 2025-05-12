@@ -24,6 +24,12 @@ local colors = {
       }
     end,
   },
+  {
+    "srt0/codescope.nvim",
+  },
+  {
+    "Skardyy/makurai-nvim",
+  },
 }
 
 -- all colors schemes use priority = 1000 in order to load first
