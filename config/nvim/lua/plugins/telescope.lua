@@ -4,10 +4,10 @@ return {
     tag = "0.1.5",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
-      local ts = require "telescope.builtin"
-      vim.keymap.set("n", "<C-p>", ts.find_files, {})
-      vim.keymap.set("n", "<M-p>", ts.live_grep, {})
-      vim.keymap.set("n", "<leader><tab>", ts.buffers, {})
+      -- local ts = require "telescope.builtin"
+      -- vim.keymap.set("n", "<C-p>", ts.find_files, {})
+      -- vim.keymap.set("n", "<M-p>", ts.live_grep, {})
+      -- vim.keymap.set("n", "<leader><tab>", ts.buffers, {})
     end,
   },
   {
