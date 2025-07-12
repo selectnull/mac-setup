@@ -15,7 +15,7 @@ require("selectnull.lsp_hover").setup()
 require "config.lazy"
 
 -- see `:help colorscheme`
-vim.cmd.colorscheme "makurai_mage"
+vim.cmd.colorscheme "makurai_dark"
 
 -- see `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
