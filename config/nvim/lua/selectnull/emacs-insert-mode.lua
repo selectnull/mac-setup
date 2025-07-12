@@ -1,10 +1,10 @@
 -- Enable Emacs style movement in insert mode
 -- Some men just want to watch the world burn.
 
-local o = { noremap = true, silent = true }
--- vim.keymap.set("i", "<C-n>", "<Down>", o)
--- vim.keymap.set("i", "<C-p>", "<Up>", o)
-vim.keymap.set("i", "<C-b>", "<Left>", o)
-vim.keymap.set("i", "<C-f>", "<Right>", o)
-vim.keymap.set("i", "<C-a>", "<C-o>^", o)
-vim.keymap.set("i", "<C-e>", "<C-o>$", o)
+-- vim.keymap.set("i", "<C-n>", "<Down>")
+-- vim.keymap.set("i", "<C-p>", "<Up>")
+-- up and down are not worth it
+vim.keymap.set({ "i", "c" }, "<C-b>", "<Left>")
+vim.keymap.set({ "i", "c" }, "<C-f>", "<Right>")
+vim.keymap.set({ "c", "i" }, "<C-a>", "<Home>")
+vim.keymap.set({ "c", "i" }, "<C-e>", "<End>")
