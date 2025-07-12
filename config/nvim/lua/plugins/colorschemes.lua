@@ -30,6 +30,17 @@ local colors = {
   {
     "Skardyy/makurai-nvim",
   },
+  {
+    "devoc09/sphere.vim",
+  },
+  {
+    "biisal/blackhole",
+    config = function()
+      require("blackhole").setup {
+        transparent = false, -- Enable transparency
+      }
+    end,
+  },
 }
 
 -- all colors schemes use priority = 1000 in order to load first
