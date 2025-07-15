@@ -1,8 +1,11 @@
-function CompileCSS()
+local function save()
   vim.cmd "write"
+end
+
+function CompileCSS()
+  pcall(save) -- ignore an error (eg no file open)
   vim.cmd "make css"
 end
 
 -- Bind in Normal mode and Insert modes
-vim.api.nvim_set_keymap("n", "<M-c>", ":lua CompileCSS()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<M-c>", "<ESC>:lua CompileCSS()<CR>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "i" }, "<M-c>", "<ESC>:lua CompileCSS()<CR>", { silent = true })
