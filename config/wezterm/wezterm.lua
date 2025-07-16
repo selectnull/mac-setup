@@ -1,4 +1,5 @@
 local wezterm = require "wezterm"
+local panes = require "panes"
 
 local keys = {
   -- split pane
@@ -30,6 +31,15 @@ local keys = {
 
   -- Toggle Pane Zoom
   { key = "Enter", mods = "CMD", action = wezterm.action.TogglePaneZoomState },
+
+  -- pane config
+  {
+    key = "1",
+    mods = "CMD|ALT",
+    action = wezterm.action_callback(function(win, pane)
+      panes.split_for_dev(win, pane)
+    end),
+  },
 }
 
 -- move tab
