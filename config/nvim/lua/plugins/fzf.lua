@@ -2,7 +2,7 @@ return {
   "ibhagwan/fzf-lua",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   opts = {},
-  config = function()
+  notconfig = function()
     local fzf = require "fzf-lua"
     vim.keymap.set("n", "<C-p>", fzf.files, {})
     vim.keymap.set("n", "<M-p>", fzf.grep, {})
