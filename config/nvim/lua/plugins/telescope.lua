@@ -22,6 +22,10 @@ return {
               ["<C-k>"] = "move_selection_previous",
             },
           },
+          file_ignore_patterns = {
+            "node_modules/.*",
+            "%.git/.*",
+          },
         },
         extensions = {
           ["ui-select"] = {
