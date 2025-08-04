@@ -9,6 +9,7 @@ require "selectnull.emacs-insert-mode"
 require "selectnull.make-css"
 require "selectnull.filetypes"
 require "selectnull.quickfix"
+require "selectnull.whitespace"
 require("selectnull.lsp_hover").setup()
 
 -- load plugins via lazy.nvim
