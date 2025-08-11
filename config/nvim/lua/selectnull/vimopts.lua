@@ -17,6 +17,8 @@ local options = {
 
   shortmess = "filnxtToOFI",
   winborder = "rounded",
+
+  swapfile = false,
 }
 
 for k, v in pairs(options) do
